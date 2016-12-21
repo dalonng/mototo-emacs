@@ -2,21 +2,18 @@
 (require 'cl)
 (require 'package)
 
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
-
-;; China source
-(add-to-list 'package-archives
-	     '("popkit" . "http://elpa.popkit.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/") t) ;; China source
 
 ;; set package-user-dir to be relative to Mototo install path
 (setq package-user-dir (expand-file-name "elpa" mototo-dir))
 (package-initialize)
 
 (defvar mototo-packages
-  '(material-theme
-    )
-  "A list of packages to ensure are installed at launch.")
+  '(helm
+    material-theme
+    session))
 
 (defun mototo-packages-installed-p ()
   "Check if all packages in `mototo-packages` are installed."

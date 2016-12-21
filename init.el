@@ -1,4 +1,3 @@
-
 ;;; Code:
 
 ;; Added by Package.el.  This must come before configurations of
@@ -21,7 +20,6 @@
 
 (defvar mototo-personal-dir (expand-file-name "personal" mototo-dir)
   "This directory is for your personal configuration.
-
 Users of Emacs Prelude are encouraged to keep their personal configuration
 changes in this directory.  All Emacs Lisp files there are loaded automatically
 by Prelude.")
@@ -34,6 +32,17 @@ by Prelude.")
 ;; the core stuff
 (require 'mototo-packages)
 (require 'mototo-ui)
+
+(message "Loading Mototo's modules...")
+
+(require 'mototo-helm)
+
+(if (display-graphic-p)
+    (require 'mototo-sessions))
+
+;; OSX specific setttings
+(when (eq system-type 'darwin)
+  (require 'mototo-osx))
 
 ;; config change made through the customize UI will be store here
 (setq custom-file (expand-file-name "custom.el" mototo-personal-dir))
