@@ -44,3 +44,5 @@ flycheck_*.el
 
 # elpa
 elpa/
+
+history

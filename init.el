@@ -6,6 +6,9 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(setq user-full-name "大龙")
+(setq user-mail-address "dalonng@gmail.com")
+
 (defvar current-user
       (getenv
        (if (equal system-type 'windows-nt) "USERNAME" "USER")))
@@ -27,22 +30,35 @@ by Prelude.")
 (add-to-list 'load-path mototo-core-dir)
 (add-to-list 'load-path mototo-modules-dir)
 
+
+
+
 (message "Loading Mototo's core...")
 
-;; the core stuff
 (require 'mototo-packages)
+(require 'mototo-keybindings)
 (require 'mototo-ui)
+(require 'mototo-misc)
+
+
+
 
 (message "Loading Mototo's modules...")
 
 (require 'mototo-helm)
-
+(require 'mototo-neotree)
 (if (display-graphic-p)
     (require 'mototo-sessions))
+(require 'mototo-misc)
+
+
 
 ;; OSX specific setttings
 (when (eq system-type 'darwin)
   (require 'mototo-osx))
+
+
+
 
 ;; config change made through the customize UI will be store here
 (setq custom-file (expand-file-name "custom.el" mototo-personal-dir))

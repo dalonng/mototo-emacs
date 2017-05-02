@@ -12,8 +12,13 @@
 
 (defvar mototo-packages
   '(helm
+    ido
     material-theme
-    session))
+    session
+    neotree
+    all-the-icons
+    powerline
+    smex))
 
 (defun mototo-packages-installed-p ()
   "Check if all packages in `mototo-packages` are installed."
