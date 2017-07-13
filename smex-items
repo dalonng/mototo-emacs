@@ -1,0 +1,24 @@
+
+;; ----- smex-history -----
+(
+ javascript-mode
+ ruby-mode
+ eval-buffer
+ package-install
+ number-to-register
+ term
+ linum-mode
+)
+
+;; ----- smex-data -----
+(
+ (electric-pair-mode . 3)
+ (linum-mode . 2)
+ (term . 1)
+ (number-to-register . 1)
+ (ruby-mode . 2)
+ (package-install . 6)
+ (rust-mode . 1)
+ (eval-buffer . 4)
+ (javascript-mode . 1)
+)

@@ -46,3 +46,5 @@ flycheck_*.el
 elpa/
 
 history
+
+ac-comphist.dat

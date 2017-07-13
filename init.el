@@ -1,17 +1,12 @@
-;;; Code:
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (setq user-full-name "大龙")
 (setq user-mail-address "dalonng@gmail.com")
 
 (defvar current-user
-      (getenv
-       (if (equal system-type 'windows-nt) "USERNAME" "USER")))
+  (getenv
+   (if (equal system-type 'windows-nt) "USERNAME" "USER")))
+
+(when (version< emacs-version "25.2")
+  (error "Mototo requires at least GNU Emacs 25.2, but you're running %s" emacs-version))
 
 (defvar mototo-dir (file-name-directory load-file-name)
   "The root dir of the Emacs Mototo distribution.")
@@ -30,18 +25,12 @@ by Prelude.")
 (add-to-list 'load-path mototo-core-dir)
 (add-to-list 'load-path mototo-modules-dir)
 
-
-
-
 (message "Loading Mototo's core...")
 
 (require 'mototo-packages)
 (require 'mototo-keybindings)
 (require 'mototo-ui)
 (require 'mototo-misc)
-
-
-
 
 (message "Loading Mototo's modules...")
 
@@ -51,16 +40,25 @@ by Prelude.")
     (require 'mototo-sessions))
 (require 'mototo-misc)
 
+;;(require 'mototo-org)
+(setq org-log-done 'time)
+
+(require 'mototo-rust)
 
 
 ;; OSX specific setttings
 (when (eq system-type 'darwin)
   (require 'mototo-osx))
 
-
-
-
 ;; config change made through the customize UI will be store here
 (setq custom-file (expand-file-name "custom.el" mototo-personal-dir))
 
 ;;; init.el ends here
+
+;; This works for copying, but not pasting for some reason
+(setq select-enable-clipboard t)
+
+;; Whatever... it's easy enough to implement that part ourselves
+(setq interprogram-paste-function
+      (lambda ()
+        (shell-command-to-string "pbpaste")))

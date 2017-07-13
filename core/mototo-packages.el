@@ -18,7 +18,11 @@
     neotree
     all-the-icons
     powerline
-    smex))
+    smex
+    haskell-mode
+    auto-complete
+    color-theme
+    tangotango-theme))
 
 (defun mototo-packages-installed-p ()
   "Check if all packages in `mototo-packages` are installed."
@@ -39,13 +43,13 @@
   "Install all package listed in `mototo-packages`."
   (unless (mototo-packages-installed-p)
     ;; check for new packages (package versions)
-    (message "%s" "Emacs Mototo is noew refresing its package database...")
+    (message "%s" "Emacs Mototo is now refresing its package database...")
     (package-refresh-contents)
     (message "%s" "done.")
     ;; install the missing packages
     (mototo-require-packages mototo-packages)))
 
 ;; run package installation
-(mototo-install-packages)
+;; (mototo-install-packages)
 
 (provide 'mototo-packages)
