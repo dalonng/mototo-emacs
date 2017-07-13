@@ -1,0 +1,22 @@
+
+;; ----- smex-history -----
+(
+ package-install
+ rust-mode
+ ruby-mode
+ number-to-register
+ term
+ linum-mode
+ electric-pair-mode
+)
+
+;; ----- smex-data -----
+(
+ (electric-pair-mode . 3)
+ (linum-mode . 2)
+ (term . 1)
+ (number-to-register . 1)
+ (ruby-mode . 1)
+ (package-install . 4)
+ (rust-mode . 1)
+)

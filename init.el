@@ -10,8 +10,11 @@
 (setq user-mail-address "dalonng@gmail.com")
 
 (defvar current-user
-      (getenv
-       (if (equal system-type 'windows-nt) "USERNAME" "USER")))
+  (getenv
+   (if (equal system-type 'windows-nt) "USERNAME" "USER")))
+
+(when (version< emacs-version "25.2")
+  (error "Mototo requires at least GNU Emacs 25.2, but you're running %s" emacs-version))
 
 (defvar mototo-dir (file-name-directory load-file-name)
   "The root dir of the Emacs Mototo distribution.")
@@ -51,6 +54,10 @@ by Prelude.")
     (require 'mototo-sessions))
 (require 'mototo-misc)
 
+;;(require 'mototo-org)
+(setq org-log-done 'time)
+
+(require 'mototo-rust)
 
 
 ;; OSX specific setttings

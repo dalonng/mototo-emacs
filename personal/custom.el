@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (swift-mode session powerline neotree material-theme helm-projectile all-the-icons-dired)))
+    (flycheck-rust cargo rust-playground tangotango-theme smex session rust-mode powerline neotree material-theme helm-projectile haskell-mode color-theme auto-complete all-the-icons)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

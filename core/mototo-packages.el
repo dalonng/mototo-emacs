@@ -18,7 +18,11 @@
     neotree
     all-the-icons
     powerline
-    smex))
+    smex
+    haskell-mode
+    auto-complete
+    color-theme
+    tangotango-theme))
 
 (defun mototo-packages-installed-p ()
   "Check if all packages in `mototo-packages` are installed."
