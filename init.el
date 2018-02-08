@@ -1,4 +1,3 @@
-;;; Code:
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -6,68 +5,29 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq user-full-name "大龙")
-(setq user-mail-address "dalonng@gmail.com")
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-(defvar current-user
-  (getenv
-   (if (equal system-type 'windows-nt) "USERNAME" "USER")))
+(require 'init-elpa)
+(require 'init-ui)
+;; (require 'init-editing)
+;; (require 'init-exec-path)
+;; (require 'init-company-mode)
+;; (require 'init-miscellaneous)
+;; (require 'init-navigation)
+;; (require 'init-rust)
 
-(when (version< emacs-version "25.2")
-  (error "Mototo requires at least GNU Emacs 25.2, but you're running %s" emacs-version))
-
-(defvar mototo-dir (file-name-directory load-file-name)
-  "The root dir of the Emacs Mototo distribution.")
-(defvar mototo-core-dir (expand-file-name "core" mototo-dir)
-  "The home of Mototo's core functionality.")
-
-(defvar mototo-modules-dir (expand-file-name  "modules" mototo-dir)
-  "This directory houses all of the built-in mototo modules.")
-
-(defvar mototo-personal-dir (expand-file-name "personal" mototo-dir)
-  "This directory is for your personal configuration.
-Users of Emacs Prelude are encouraged to keep their personal configuration
-changes in this directory.  All Emacs Lisp files there are loaded automatically
-by Prelude.")
-
-(add-to-list 'load-path mototo-core-dir)
-(add-to-list 'load-path mototo-modules-dir)
-
-
-
-
-(message "Loading Mototo's core...")
-
-(require 'mototo-packages)
-(require 'mototo-keybindings)
-(require 'mototo-ui)
-(require 'mototo-misc)
-
-
-
-
-(message "Loading Mototo's modules...")
-
-(require 'mototo-helm)
-(require 'mototo-neotree)
-(if (display-graphic-p)
-    (require 'mototo-sessions))
-(require 'mototo-misc)
-
-;;(require 'mototo-org)
-(setq org-log-done 'time)
-
-(require 'mototo-rust)
-
-
-;; OSX specific setttings
-(when (eq system-type 'darwin)
-  (require 'mototo-osx))
-
-
-
-
-;; config change made through the customize UI will be store here
-(setq custom-file (expand-file-name "custom.el" mototo-personal-dir))
-
-;;; init.el ends here
+(provide 'init)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (cargo smex rainbow-delimiters racer projectile minimap ido-ubiquitous golden-ratio flycheck-rust exec-path-from-shell company atom-one-dark-theme))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
