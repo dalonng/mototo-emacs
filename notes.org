@@ -1,0 +1,18 @@
+
+** Fri Mar  9 15:57:54 2018 (sdjflksj)
+
+sdjflksj
+
+/Users/dalong/.emacs.d/lisp/init-org.el
+
+** Fri Mar  9 16:02:20 2018 (temp)
+
+temp
+
+/Users/dalong/.emacs.d/lisp/init-org.el
+
+** Fri Mar  9 16:04:08 2018 (t fsdfs)
+
+t fsdfs
+
+/Users/dalong/.emacs.d/lisp/init-org.el
