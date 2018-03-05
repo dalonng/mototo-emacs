@@ -32,4 +32,7 @@
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+(global-set-key (kbd "C-<") 'beginning-of-buffer)
+(global-set-key (kbd "C->") 'end-of-buffer)
+
 (provide 'init-editing)

@@ -2,6 +2,9 @@
 (require-package 'atom-one-dark-theme)
 (require-package 'golden-ratio)
 
+(require-package 'session)
+(require 'session)
+
 (require 'golden-ratio)
 
 (setq inhibit-startup-message t)
@@ -27,5 +30,10 @@
 (setq ring-bell-function 'ignore)
 
 (golden-ratio-mode 1)
+
+;; desktop
+(desktop-save-mode 1)
+
+(add-hook 'after-init-hook 'session-initialize)
 
 (provide 'init-ui)
