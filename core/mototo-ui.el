@@ -17,6 +17,7 @@
 (blink-cursor-mode 1)
 (setq-default cursor-type 'bar)
 
-(tool-bar-mode -1)
+(if window-system
+  (tool-bar-mode -1))
 
 (provide 'mototo-ui)
