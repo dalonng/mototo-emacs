@@ -1,6 +1,6 @@
 ;;
 (load-theme 'material t)
-(powerline-default-theme)
+;; (powerline-default-theme)
 
 ;; Show line number
 (linum-mode 1)

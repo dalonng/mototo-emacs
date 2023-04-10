@@ -28,9 +28,18 @@ by Prelude.")
 (message "Loading Mototo's core...")
 
 (require 'mototo-packages)
+
+;; 按需安装 material-theme
+(mototo-install-packages-if-missing 'material-theme)
+
+(mototo-install-packages-if-missing 'session)
+
+
 (require 'mototo-keybindings)
 (require 'mototo-ui)
 (require 'mototo-misc)
+
+
 
 (message "Loading Mototo's modules...")
 
