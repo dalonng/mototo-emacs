@@ -1,6 +1,5 @@
 ;;
-;;(load-theme 'material t)
-(load-theme 'zenburn t)
+(load-theme 'material t)
 (powerline-default-theme)
 
 ;; Show line number

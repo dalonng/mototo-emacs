@@ -5,8 +5,8 @@
   (getenv
    (if (equal system-type 'windows-nt) "USERNAME" "USER")))
 
-(when (version< emacs-version "25.2")
-  (error "Mototo requires at least GNU Emacs 25.2, but you're running %s" emacs-version))
+(when (version< emacs-version "28.1")
+  (error "Mototo requires at least GNU Emacs 28.1, but you're running %s" emacs-version))
 
 (defvar mototo-dir (file-name-directory load-file-name)
   "The root dir of the Emacs Mototo distribution.")
@@ -34,13 +34,11 @@ by Prelude.")
 
 (message "Loading Mototo's modules...")
 
-(require 'mototo-helm)
 (require 'mototo-neotree)
 (if (display-graphic-p)
     (require 'mototo-sessions))
 (require 'mototo-misc)
 
-;;(require 'mototo-org)
 (setq org-log-done 'time)
 
 (require 'mototo-rust)
