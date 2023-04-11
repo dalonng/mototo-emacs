@@ -49,7 +49,7 @@
     ;; install the missing packages
     (mototo-require-packages mototo-packages)))
 
-(defun mototo-install-packages-if-missing (a-package)
+(defun mototo-install-package-if-missing (a-package)
   "Install all packages in PACKAGES if they are not installed."
   (unless (package-installed-p a-package)
     (package-install a-package)))

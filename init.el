@@ -30,9 +30,9 @@ by Prelude.")
 (require 'mototo-packages)
 
 ;; 按需安装 material-theme
-(mototo-install-packages-if-missing 'material-theme)
+(mototo-install-package-if-missing'material-theme)
 
-(mototo-install-packages-if-missing 'session)
+(mototo-install-package-if-missing 'session)
 
 
 (require 'mototo-keybindings)

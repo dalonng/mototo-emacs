@@ -1,3 +1,25 @@
+
+;; install rust-mode
+(mototo-install-package-if-missing 'rust-mode)
+
+;; autolaod rust-mode
+(autoload 'rust-mode "rust-mode" nil t)
+
+;; add-to-list
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
+;; config lsp
+(add-hook 'rust-mode-hook 'lsp-mode)
+(setq lsp-rust-server 'rust-analyzer)
+(add-hook 'rust-mode-hook 'lsp-deferred)
+
+;; format on save
+(setq rust-format-on-save t)
+
+;; prettifying symbols mode
+(add-hook 'rust-mode-hook
+	(lambda () (prettify-symbols-mode)))
+
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
 (add-hook 'rust-mode-hook
           (lambda ()
